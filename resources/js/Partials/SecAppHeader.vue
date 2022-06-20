@@ -14,12 +14,12 @@
             <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <span v-if="user">
-                            <b><a href="student" class="nav-link" >{{user.name}}</a></b>
+                            <b><inertia-link :href="$route('stuprofile', {id: user.id})" class="nav-link">{{user.name}}</inertia-link></b>
                         </span>
                     </li>
                     <li class="nav-item"> &nbsp;&nbsp;&nbsp; </li>
                     <li class="nav-item">
-                        <a href="logout" class="nav-link" >Logout</a >
+                        <inertia-link :href="route('logout')" class="nav-link">Logout</inertia-link>
                     </li>
             </ul>
   
@@ -30,12 +30,11 @@
 </template>
 
 <script>
-import {usePage,Link} from "@inertiajs/inertia-vue3";
+import {usePage} from "@inertiajs/inertia-vue3";
 import {computed} from "vue";
 
 export default {
     name: "SecAppHeader",
-    component:(Link),
     setup() {
         
         const user = computed(() => usePage().props.value.auth.user);

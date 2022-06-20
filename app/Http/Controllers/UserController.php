@@ -55,19 +55,19 @@ class UserController extends Controller
         $class['tphone'] = $teacher['phoneNumber'];
         $class['temail'] = $teacher['email'];
 
-        return view('classS', ['class' => $class, 'file' => $files]); //->with('file', json_decode($files, true));
+        return Inertia::render('classS', ['classs' => $class, 'file' => $files]); //->with('file', json_decode($files, true));
     }
 
     public function returnteacher($id)
     {
         $teacher = self::getUser($id);
-        return view('teacherProfile', ['tech' => $teacher]);
+        return Inertia::render('teacherProfile', ['tech' => $teacher]);
     }
 
     public function returnstudent($id)
     {
         $student = self::getUser($id);
-        return view('studentProfile', ['stud' => $student]);
+        return Inertia::render('studentProfile', ['stud' => $student]);
     }
 
     public function returnclassT($classid)
@@ -79,7 +79,7 @@ class UserController extends Controller
             $student['name'] = self::getUser($student['studentid'])['name'];
         }
 
-        return view('classT', ['class' => $class, 'file' => $files, 'students' => $students]);
+        return Inertia::render('classT', ['classs' => $class, 'file' => $files, 'students' => $students]);
     }
 
     public function uploadfile(Request $request)
@@ -145,6 +145,7 @@ class UserController extends Controller
 
         return redirect("login")->withSuccess('Opps! You do not have access');
     }
+    //*********************************************
 
     /*
     public function classes()

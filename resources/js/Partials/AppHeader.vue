@@ -12,10 +12,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a href="login" class="nav-link">Login</a >
+                        <inertia-link :href="route('login')" class="nav-link">Login</inertia-link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="register">Register</a>
+                         <inertia-link :href="route('register')" class="nav-link">Register</inertia-link>
                     </li>
             </ul>
   
@@ -27,11 +27,11 @@
 
 <script>
 import {computed} from "vue";
-import {usePage,InertiaLink} from "@inertiajs/inertia-vue3";
+import {usePage} from "@inertiajs/inertia-vue3";
 
 export default {
     name: "AppHeader",
-    component:{InertiaLink},
+    component:{},
     setup() {
         const user = computed(() => usePage().props.value.auth.user);
 

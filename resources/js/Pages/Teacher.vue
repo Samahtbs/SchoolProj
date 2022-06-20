@@ -6,7 +6,7 @@
             <div class="card">
                 <div class="card-header">{{'Teachers'}}</div>
                       <tr v-for="(item) in list">
-                        <a href="classT/{{item.id}}">{{item.ClassName}}</a>
+                        <inertia-link :href="$route('classT', {id: item.id})" class="nav-link">{{item.ClassName}}</inertia-link>
                       </tr>
             </div>
         </div>
