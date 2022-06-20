@@ -16,11 +16,10 @@
                           </tr>
                     </thead>
                     <tbody>
-                        <tbody>
                       <tr v-for="(item) in students">
                         <th scope="row">
 <inertia-link :href="$route('stuprofile', {id: item.studentid})" class="nav-link">{{item.name}}</inertia-link>
-                            </th>
+                        </th>
                         <td>
                           <a href="" class="update" data-name="first" data-type="text" data-pk="{{item.First}}" data-title="Enter name">{{item.First}}</a>
                         </td>
@@ -31,7 +30,6 @@
                           <a href="" class="update" data-name="final" data-type="text" data-pk="{{item.Final}}" data-title="Enter email">{{item.Final}}}</a>
                         </td>
                       </tr>
-                    </tbody>
                     </tbody>
                 </table>
 
@@ -46,7 +44,7 @@
                 <div class="card-body">
                 <h6> Upload file to this class</h6>
                 <form method="post" action="{{url('upladfile')}}" enctype="multipart/form-data">
-                    {{csrf_field()}}
+                    <!--{{csrf_field()}}-->
                       <div class="input-group" >
                         <input type="hidden" name="classid" value="{{classs.id}}">
                         <input type="file" accept=".pdf,.ppt,.pptx,.pptm" name="filenames[]" class="myfrm form-control">
