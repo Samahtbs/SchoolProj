@@ -25,7 +25,7 @@
                           <a href="" class="update" data-name="mid" data-type="text" data-pk="{{item.Mid}}" data-title="Enter email">{{item.Mid}}</a>
                         </td>
                         <td>
-                          <a href="" class="update" data-name="final" data-type="text" data-pk="{{item.Final}}" data-title="Enter email">{{item.Final}}}</a>
+                          <a href="" class="update" data-name="final" data-type="text" data-pk="{{item.Final}}" data-title="Enter email">{{item.Final}}</a>
                         </td>
                       </tr>
                     </tbody>

@@ -40,7 +40,7 @@ class LoginController extends Controller
                 return redirect()->intended('student');
             } else if ($user->type == 3) {
                 //************admin*************//
-                return Inertia::render('AdminPanel')->withSuccess('You have Successfully loggedin');
+                return Inertia::render('AdminPanel');
 
                 //return redirect()->intended('AdminPanel')->withSuccess('You have Successfully loggedin');  
             }

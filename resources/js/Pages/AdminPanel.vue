@@ -3,9 +3,9 @@
 <div class="container">
     <div class="row justify-content-center">
                 <div class="card-body">
-                    <a href="/get/students">Students</a>
-                    <a href="/get/teahers">Teachers</a>
-                    <a href="/get/classes">Clasess</a>
+                    <inertia-link :href="$route('students')" class="nav-link">Students</inertia-link>
+                    <inertia-link :href="$route('teachers')" class="nav-link">Teachers</inertia-link>
+                    <inertia-link :href="$route('classes')" class="nav-link">Clasess</inertia-link>
                 </div>
     </div>
 </div>
