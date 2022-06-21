@@ -14,13 +14,11 @@
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach ($students as $student) 
-                      <tr>
-                        <th scope="row"> {{$student['name']}}</th>
-                        <td>{{$student['email']}}</td>
-                        <td>{{$student['phoneNumber']}}</td>
+                      <tr v-for="(item) in students">
+                        <th scope="row"> {{item.name}}</th>
+                        <td>{{item.email}}</td>
+                        <td>{{item.phoneNumber}}</td>
                       </tr>
-                      @endforeach
                     </tbody>
                   </table>
   

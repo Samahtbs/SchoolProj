@@ -13,12 +13,10 @@
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach ($classes as $class) 
-                      <tr>
-                        <th scope="row"> {{$class['id']}}</th>
-                        <td>{{$class['ClassName']}}</td>
+                       <tr v-for="(item) in classes">
+                        <th scope="row"> {{item.id}}</th>
+                        <td>{{item.ClassName}}</td>
                       </tr>
-                      @endforeach
                     </tbody>
                   </table>
             </div>
