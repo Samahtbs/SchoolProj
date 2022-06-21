@@ -7,7 +7,6 @@ use App\Models\User;
 use Inertia\Inertia;
 use App\Models\classTeacher;
 use App\Models\studentclass;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
@@ -82,41 +81,26 @@ class UserController extends Controller
         return Inertia::render('classT', ['classs' => $class, 'file' => $files, 'students' => $students]);
     }
 
-    public function uploadfile(Request $request)
-    {
-        $this->validate($request, [
-            'filenames' => 'required',
-            'filenames.*' => 'mimes:pdf,ppt,pptx,pptm'
-        ]);
-        if ($request->hasfile('filenames')) {
-            foreach ($request->file('filenames') as $file) {
-                $name = time() . '.' . $file->extension();
-                $file->move(base_path() . '/storage/app/public', $name);
-                $data[] = $name;
-            }
-        }
+    //*********************************************
 
-
-        $file = new File();
-        $file->classid = $request->classid;
-        $file->FileName =  $name;
-        $file->FileDecoded = json_encode($data);
-        $file->save();
-
-
-        return back()->with('success', 'Your files has been send successfully');
-    }
     public function students()
     {
         $students = User::where('type', '2')->get();
-        return Inertia::render('students', ['students' => $students]);
+        return Inertia::render('Students', ['students' => $students]);
     }
 
     public function teachers()
     {
         $teachers = User::where('type', '1')->get();
-        return Inertia::render('teachers', ['teachers' => $teachers]);
+        return Inertia::render('Teachers', ['teachers' => $teachers]);
     }
+
+    public function classes()
+    {
+        $clasess = classTeacher::all();
+        return Inertia::render('Classes', ['classes' => $clasess]);
+    }
+    //*********************************************
 
     public function student()
     {
@@ -145,14 +129,4 @@ class UserController extends Controller
 
         return redirect("login")->withSuccess('Opps! You do not have access');
     }
-    //*********************************************
-
-    /*
-    public function classes()
-    {
-        $clasess = classTeacher::all();
-        return Inertia::render('classes', ['classes' => $clasess]);
-        //return view('classes', ['classes' => $clasess]);
-    }
-    */
 }

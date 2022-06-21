@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{'Teachers'}}</div>
+                <div class="card-header">{{'My Classes'}}</div>
                       <tr v-for="(item) in list">
                         <inertia-link :href="$route('classT', {id: item.id})" class="nav-link">{{item.ClassName}}</inertia-link>
                       </tr>
