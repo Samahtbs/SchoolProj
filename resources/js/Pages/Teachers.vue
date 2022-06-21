@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Teachers') }}</div>
+                <div class="card-header">{{'Teachers'}}</div>
                 <table class="table">
                     <thead class="thead-dark">
                       <tr>
