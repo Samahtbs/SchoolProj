@@ -20,6 +20,7 @@ Route::get('teacher', [UserController::class, 'teacher']);
 Route::get('students', [UserController::class, 'students'])->name('students');
 Route::get('teachers', [UserController::class, 'teachers'])->name('teachers');
 Route::get('classes', [UserController::class, 'classes'])->name('classes');
+Route::get('editMarks/{id}', [UserController::class, 'editMarks'])->name('mark.edit');
 Route::get('stuprofile/{id}', [UserController::class, 'returnstudent'])->name('stuprofile');
 Route::get('class/{id}', [UserController::class, 'returnclass'])->name('class');
 Route::get('classT/{id}', [UserController::class, 'returnclassT'])->name('classT');

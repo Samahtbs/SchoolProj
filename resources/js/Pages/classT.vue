@@ -11,21 +11,17 @@
                             <th scope="col">First Mark</th>
                             <th scope="col">Mid Mark</th>
                             <th scope="col">Final Mark</th>
+                            <th scope="col">Edit</th>
                           </tr>
                     </thead>
                     <tbody>
                       <tr v-for="(item) in students">
-                        <td scope="row">
-<inertia-link :href="$route('stuprofile', {id: item.studentid})" class="nav-link">{{item.name}}</inertia-link>
-                        </td>
+                        <td scope="row"><inertia-link :href="$route('stuprofile', {id: item.studentid})" class="nav-link">{{item.name}}</inertia-link></td>
+                        <td>{{item.First}}</td>
+                        <td>{{item.Mid}}</td>
+                        <td>{{item.Final}}</td>
                         <td>
-                          <a href="" class="update" data-name="first" data-type="text" data-pk="{{item.First}}" data-title="Enter name">{{item.First}}</a>
-                        </td>
-                        <td>
-                          <a href="" class="update" data-name="mid" data-type="text" data-pk="{{item.Mid}}" data-title="Enter email">{{item.Mid}}</a>
-                        </td>
-                        <td>
-                          <a href="" class="update" data-name="final" data-type="text" data-pk="{{item.Final}}" data-title="Enter email">{{item.Final}}</a>
+                          <inertia-link :href="$route('mark.edit', {id: item.studentid})" class="nav-link"><button class="btn btn-success">edit</button></inertia-link>
                         </td>
                       </tr>
                     </tbody>

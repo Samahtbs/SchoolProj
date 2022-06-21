@@ -81,6 +81,18 @@ class UserController extends Controller
         return Inertia::render('classT', ['classs' => $class, 'file' => $files, 'students' => $students]);
     }
 
+    public function editMarks($id)
+    {
+        $stu = self::getUser($id);
+        $marks = studentclass::where('studentid', $id)->get();
+        $student['name'] = $stu['name'];
+        $student['First'] = $marks[0]['First'];
+        $student['Mid'] = $marks[0]['Mid'];
+        $student['Final'] = $marks[0]['Final'];
+        return Inertia::render('EditMarks', ['student' => $student]);
+    }
+
+
     //*********************************************
 
     public function students()
